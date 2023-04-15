@@ -1,0 +1,312 @@
+/************************** App Theme **************************/
+
+/* for light theme */
+:root {
+  --layoutBG: #1e1e2d;
+  --screenBG: #f5f8fa;
+  --cardBG: #ffffff;
+  --fontColor: #3f4254;
+  --app-header-height: 90px;
+  --app-header-width: 84%;
+  --appside-bar-width: 15rem;
+  --aside-toolbar-height: 100vh;
+  --link-active-color: #009ef7;
+  --drop-down-box-shadow: 0px 0px 50px 0px rgb(82, 63, 105, 0.15);
+  --highLightLayer: #ffffff;
+  --asideMobileMenuWidth: 0;
+}
+
+/* for dark theme */
+[data-theme="dark"] {
+  --layoutBG: #1e1e2d;
+  --screenBG: #151521;
+  --cardBG: #1e1e2d;
+  --fontColor: #ffffff;
+  --highLightLayer: #2a2a3c;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/************************** Common Components **************************/
+
+/* for dark horizontal line */
+
+.horizontal-line {
+  border-bottom: 1px solid var(--screenBG);
+}
+
+.icon {
+  font-size: 18px;
+}
+
+.icon:hover {
+  color: var(--link-active-color);
+}
+
+.fs-7 {
+  font-size: 0.8rem;
+}
+
+/************************** Layout **************************/
+
+.app-menu {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Header componenet */
+
+.header {
+  position: fixed;
+  width: calc(100% - var(--appside-bar-width));
+  top: 0;
+  left: var(--appside-bar-width);
+  height: var(--app-header-height);
+  padding: 25px 10px;
+  background: var(--cardBG);
+}
+
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  padding-left: 25px;
+  padding-right: 25px;
+}
+
+.header-left,
+.header-right {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2rem;
+  color: var(--fontColor);
+}
+
+.hamburger {
+  font-size: 1.5rem;
+}
+
+@media (max-width: 480px) {
+  .header-left,
+  .header-right {
+    gap: 0.7rem;
+  }
+}
+
+/* Header componenet - Theme Options */
+
+.themeChange {
+  position: relative;
+}
+
+.current-theme {
+  font-size: 1.3rem;
+  color: var(--fontColor);
+}
+
+.current-theme:hover {
+  cursor: pointer;
+  color: var(--link-active-color);
+}
+
+.theme-options {
+  position: absolute;
+  top: 40px;
+  right: 0;
+  width: 130px;
+  border-radius: 0.475rem;
+  background-color: var(--cardBG);
+  padding: 10px 15px;
+  box-shadow: var(--drop-down-box-shadow);
+  opacity: 0;
+  visibility: hidden;
+  color: var(--fontColor);
+  font-size: 1rem;
+}
+
+.themeChange:hover .theme-options {
+  cursor: pointer;
+  opacity: 1;
+  visibility: visible;
+}
+
+.theme-option {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+  padding: 5px 0px;
+}
+
+.theme-option:hover {
+  cursor: pointer;
+  color: var(--link-active-color);
+}
+
+.theme-option.active {
+  color: var(--link-active-color);
+}
+
+@media (max-width: 480px) {
+  .current-theme {
+    font-size: 1rem;
+  }
+
+  .theme-options {
+    font-size: 0.9rem;
+  }
+}
+
+/* Header componenet - User Settings */
+
+.userSetting-header {
+  position: relative;
+}
+
+.user-profile-header {
+  width: 2.7rem;
+  height: 2.7rem;
+  border-radius: 5px;
+  overflow: hidden;
+  object-fit: cover;
+  cursor: pointer;
+}
+
+.user-profile-header img {
+  width: 100%;
+  height: 100%;
+}
+
+.user-profile-header-options {
+  position: absolute;
+  top: 75px;
+  right: 0;
+  width: 250px;
+  border-radius: 0.475rem;
+  background-color: var(--cardBG);
+  box-shadow: var(--drop-down-box-shadow);
+  color: var(--fontColor);
+  font-size: 1rem;
+}
+
+.user-profile-header-top,
+.user-profile-header-middle,
+.user-profile-header-bottom {
+  padding: 0.5rem 1rem;
+}
+
+.user-profile-header-option {
+  padding: 0.5rem 0;
+  color: #7e8299;
+}
+
+.user-profile-header-details {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  padding: 0.5rem 0rem;
+}
+
+.user-profile-header-details-image {
+  width: 4rem;
+  height: 4rem;
+  border-radius: 5px;
+  overflow: hidden;
+  object-fit: cover;
+}
+
+.user-profile-header-details-image img {
+  width: 100%;
+  height: 100%;
+}
+
+/* Aside componenet */
+
+.aside {
+  position: fixed;
+  top: 0;
+  z-index: 100;
+  width: var(--appside-bar-width);
+  background: var(--layoutBG);
+  height: var(--aside-toolbar-height);
+  padding: 30px 10px;
+  transition: width 0.3s ease;
+}
+
+.logo {
+  font-size: 1.5rem;
+  color: #ffffff;
+  padding-bottom: 25px;
+}
+
+span.rest-logo {
+  opacity: 1;
+  visibility: visible;
+  transition: opacity 1s ease;
+}
+
+span.rest-logo.hide {
+  opacity: 0;
+  visibility: hidden;
+  max-height: 0;
+  transition: opacity 0.5s ease;
+}
+
+.aside-close {
+  position: absolute;
+  top: 25px;
+  right: -25px;
+  background-color: var(--highLightLayer);
+  color: var(--fontColor);
+  z-index: 100;
+}
+
+/* Mobile Aside componenet */
+
+.mobile-aside {
+  position: fixed;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  visibility: hidden;
+  width: var(--asideMobileMenuWidth);
+  background: var(--layoutBG);
+  height: var(--aside-toolbar-height);
+  z-index: 100;
+  padding: 30px 10px;
+  transition: width 2.5s ease;
+}
+
+.mobile-aside.open {
+  width: 300px;
+  opacity: 1;
+  visibility: visible;
+  transition: width 0.5s ease;
+}
+
+.mobile-aside-close {
+  position: absolute;
+  top: 30px;
+  right: 15px;
+  background-color: var(--highLightLayer);
+  color: var(--fontColor);
+}
+/************************** Modules **************************/
+
+.app-wrapper {
+  margin-left: var(--appside-bar-width);
+  margin-top: var(--app-header-height);
+  background: var(--screenBG);
+  padding: 50px;
+  height: 100vh;
+  transition: margin-left 0.3s ease;
+}
+
+@media (max-width: 480px) {
+  :root {
+    --appside-bar-width: 0rem;
+  }
+}
