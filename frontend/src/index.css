@@ -12,8 +12,10 @@
   --aside-toolbar-height: 100vh;
   --link-active-color: #009ef7;
   --drop-down-box-shadow: 0px 0px 50px 0px rgb(82, 63, 105, 0.15);
+  --bs-card-box-shadow: 0px 0px 20px 0px rgba(76, 87, 125, 0.02);
   --highLightLayer: #ffffff;
   --asideMobileMenuWidth: 0;
+  --bs-card-border-radius: 0.625rem;
 }
 
 /* for dark theme */
@@ -23,6 +25,10 @@
   --cardBG: #1e1e2d;
   --fontColor: #ffffff;
   --highLightLayer: #2a2a3c;
+}
+
+* {
+  font-family: Inter, Helvetica, "sans-serif";
 }
 
 body {
@@ -51,6 +57,18 @@ body {
   font-size: 0.8rem;
 }
 
+.dashboard-card {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  color: var(--fontColor);
+  background: var(--cardBG);
+  box-shadow: var(--bs-card-box-shadow);
+  border-radius: var(--bs-card-border-radius);
+}
+
 /************************** Layout **************************/
 
 .app-menu {
@@ -68,6 +86,8 @@ body {
   height: var(--app-header-height);
   padding: 25px 10px;
   background: var(--cardBG);
+  z-index: 1000;
+  transition: all 0.3s ease;
 }
 
 .header-container {
@@ -233,6 +253,7 @@ body {
   background: var(--layoutBG);
   height: var(--aside-toolbar-height);
   padding: 30px 10px;
+  z-index: 1001;
   transition: width 0.3s ease;
 }
 

@@ -24,7 +24,7 @@ export default function Aside({ asideClose, setAsideClose }: any) {
     <div className="aside">
       <div className="container">
         <div data-cy="logo" className="logo">
-          S<span className="rest-logo">ports Sprint</span>
+          P<span className="rest-logo">rocity</span>
         </div>
         {asideClose ? (
           <div
