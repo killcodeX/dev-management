@@ -1,6 +1,6 @@
-/************************** App Theme **************************/
+/************************************* App Theme *************************************/
 
-/* for light theme */
+/*~~~~~~~~~~ for light theme ~~~~~~~~~~*/
 :root {
   --layoutBG: #1e1e2d;
   --screenBG: #f5f8fa;
@@ -18,9 +18,10 @@
   --bs-card-border-radius: 0.625rem;
   --bs-gray-100: #F9F9F9;
   --bs-gray-200: #f4f4f4;
+  --bs-danger: #f1416c;
 }
 
-/* for dark theme */
+/*~~~~~~~~~~ for dark theme ~~~~~~~~~~*/
 [data-theme="dark"] {
   --layoutBG: #1e1e2d;
   --screenBG: #151521;
@@ -41,7 +42,13 @@ body {
   box-sizing: border-box;
 }
 
-/************************** Common Components **************************/
+a{
+  text-decoration: none;
+}
+
+/************************************* Common Components *************************************/
+
+/*~~~~~~~~~~ Flex row/column ~~~~~~~~~~*/
 
 .flex-ds-row {
   display: flex;
@@ -58,13 +65,13 @@ body {
   align-items: center;
 }
 
-/* for dark horizontal line */
+/*~~~~~~~~~~ for dark horizontal line ~~~~~~~~~~*/
 
 .horizontal-line {
   border-bottom: 1px solid var(--screenBG);
 }
 
-/* icons */
+/*~~~~~~~~~~ icons ~~~~~~~~~~*/
 
 .icon {
   font-size: 18px;
@@ -84,7 +91,7 @@ body {
   text-decoration: line-through;
 }
 
-/* card */
+/*~~~~~~~~~~ card ~~~~~~~~~~*/
 
 .dashboard-card {
   width: 100%;
@@ -121,7 +128,7 @@ body {
   color: var(--link-active-color);
 }
 
-/* Input forms */
+/*~~~~~~~~~~ Input forms ~~~~~~~~~~*/
 
 .form-check-input {
   border: none;
@@ -145,7 +152,7 @@ body {
   font-size: 1rem;
 }
 
-/* buttons */
+/*~~~~~~~~~~ buttons ~~~~~~~~~~*/
 .btn-primary {
   color: #ffffff;
   padding: 10px 30px;
@@ -153,14 +160,14 @@ body {
   background-color: var(--link-active-color);
 }
 
-/************************** Layout **************************/
+/************************************* Layout *************************************/
 
 .app-menu {
   display: flex;
   flex-direction: column;
 }
 
-/* Header componenet */
+/*~~~~~~~~~~ Header componenet ~~~~~~~~~~*/
 
 .header {
   position: fixed;
@@ -201,7 +208,7 @@ body {
   }
 }
 
-/* Header componenet - Theme Options */
+/*~~~~~~~~~~ Header componenet - Theme Options ~~~~~~~~~~*/
 
 .themeChange {
   position: relative;
@@ -264,7 +271,7 @@ body {
   }
 }
 
-/* Header componenet - User Settings */
+/*~~~~~~~~~~ Header componenet - User Settings ~~~~~~~~~~*/
 
 .userSetting-header {
   position: relative;
@@ -327,7 +334,7 @@ body {
   height: 100%;
 }
 
-/* Aside componenet */
+/*~~~~~~~~~~ Aside componenet ~~~~~~~~~~*/
 
 .aside {
   position: fixed;
@@ -369,7 +376,7 @@ span.rest-logo.hide {
   z-index: 100;
 }
 
-/* Mobile Aside componenet */
+/*~~~~~~~~~~ Mobile Aside componenet ~~~~~~~~~~*/
 
 .mobile-aside {
   position: fixed;
@@ -399,14 +406,14 @@ span.rest-logo.hide {
   background-color: var(--highLightLayer);
   color: var(--fontColor);
 }
-/************************** Modules **************************/
+/************************************* Modules *************************************/
 
 .app-wrapper {
   margin-left: var(--appside-bar-width);
   margin-top: var(--app-header-height);
   background: var(--screenBG);
   padding: 50px;
-  height: 100vh;
+  min-height: 100vh;
   transition: margin-left 0.3s ease;
 }
 
@@ -414,12 +421,56 @@ span.rest-logo.hide {
   :root {
     --appside-bar-width: 0rem;
   }
+
+  .app-wrapper {
+    padding: 10px;
+  }
 }
 
-/*<--------------- Home --------------->*/
+/*<------------------------ Dashboard ------------------------>*/
 
-/* Section 2 componenet */
+/*################# Section 2 component #################*/
 
+/*~~~~~~~~~~ Week Task List ~~~~~~~~~~ */
+.week-calender-list{
+  list-style: none;
+  text-align: center;
+  padding-left: 0rem;
+  flex-wrap: wrap;
+}
+
+.week-calender-list-item.active{
+  background-color: var(--bs-danger);
+  color: #ffffff;
+}
+
+.day-name{
+  color: #B5B5C3;
+}
+
+.day-name.active{
+  color: #ffffff;
+}
+
+.day-date{
+  color: #3F4254;
+}
+
+.day-date.active{
+  color: #ffffff;
+}
+
+.dashboard-meetings-pane {
+  margin-top:50px;
+}
+
+.dashboard-meetings-list {
+  padding-left:15px;
+  margin-bottom:20px;
+}
+
+
+/* Todo List */
 .todo-list {
   margin-bottom: 30px;
 }
