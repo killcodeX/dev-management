@@ -23,7 +23,7 @@ export default function Header({ mobileMenu, setMobileMenu }: IProps) {
               >
                 <SlMenu />
               </div>
-              <div className="logo-mobile">Sports</div>
+              <div className="logo-mobile">Dev Mange</div>
             </>
           ) : null}
         </div>
