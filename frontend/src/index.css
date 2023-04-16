@@ -141,6 +141,10 @@ body {
   transition: color 0.2s ease;
 }
 
+.form-control::placeholder{
+  font-size: 1rem;
+}
+
 /* buttons */
 .btn-primary {
   color: #ffffff;
