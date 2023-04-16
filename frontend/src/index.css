@@ -16,6 +16,8 @@
   --highLightLayer: #ffffff;
   --asideMobileMenuWidth: 0;
   --bs-card-border-radius: 0.625rem;
+  --bs-gray-100: #F9F9F9;
+  --bs-gray-200: #f4f4f4;
 }
 
 /* for dark theme */
@@ -25,6 +27,8 @@
   --cardBG: #1e1e2d;
   --fontColor: #ffffff;
   --highLightLayer: #2a2a3c;
+  --bs-gray-100: #1b1b29;
+  --bs-gray-200: #2b2b40;
 }
 
 * {
@@ -39,11 +43,28 @@ body {
 
 /************************** Common Components **************************/
 
+.flex-ds-row {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+}
+
+.flex-ds-column {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
 /* for dark horizontal line */
 
 .horizontal-line {
   border-bottom: 1px solid var(--screenBG);
 }
+
+/* icons */
 
 .icon {
   font-size: 18px;
@@ -53,15 +74,19 @@ body {
   color: var(--link-active-color);
 }
 
+/* typography */
+
 .fs-7 {
   font-size: 0.8rem;
 }
 
+.strike-through {
+  text-decoration: line-through;
+}
+
+/* card */
+
 .dashboard-card {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
   width: 100%;
   color: var(--fontColor);
   background: var(--cardBG);
@@ -69,16 +94,59 @@ body {
   border-radius: var(--bs-card-border-radius);
 }
 
-.card-header{
+.card-header {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  align-items: center;
   width: 100%;
   background: inherit;
 }
 
-.card-title{
+.card-footer {
+  padding-top: 15px;
+  width: 100%;
+  background: inherit;
+}
+
+.card-title {
   font-size: 1.275rem;
+}
+
+.card-tootlbar {
+  cursor: pointer;
+}
+
+.card-tootlbar:hover {
+  color: var(--link-active-color);
+}
+
+/* Input forms */
+
+.form-check-input {
+  border: none;
+  width: 1.55rem;
+  height: 1.55rem;
+  background-color: var(--bs-gray-200);
+}
+
+.form-check:not(.form-switch) .form-check-input[type="checkbox"] {
+  background-size: 60% 60%;
+}
+
+.form-control.form-control-solid {
+  background-color: var(--bs-gray-100);
+  border-color: var(--bs-gray-100);
+  color: var(--bs-gray-700);
+  transition: color 0.2s ease;
+}
+
+/* buttons */
+.btn-primary {
+  color: #ffffff;
+  padding: 10px 30px;
+  border-color: var(--link-active-color);
+  background-color: var(--link-active-color);
 }
 
 /************************** Layout **************************/
@@ -342,4 +410,24 @@ span.rest-logo.hide {
   :root {
     --appside-bar-width: 0rem;
   }
+}
+
+/*<--------------- Home --------------->*/
+
+/* Section 2 componenet */
+
+.todo-list {
+  margin-bottom: 30px;
+}
+
+.todo-body-left-side {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+label.form-check {
+  display: flex;
+  align-items: center;
+  gap: 20px;
 }

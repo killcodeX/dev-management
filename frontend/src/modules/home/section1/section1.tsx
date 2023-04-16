@@ -40,7 +40,7 @@ export default function section1() {
             {data1.map((item) => {
               return (
                 <div className="col-sm-3" key={item.id}>
-                  <div className="card dashboard-card p-4 mb-3">
+                  <div className="card dashboard-card flex-ds-row p-4 mb-3">
                     <div className="dashboard-home-section-1-left">
                       <div className="card-label fw-bold pb-2">{item.cardCategory}</div>
                       <div className="fs-4 me-2 lh-1 ls-n2 pb-2">{item.cardNumber}</div>
